@@ -3,43 +3,6 @@
 
       <form role="form" style="margin-top: 20px;" id="note_form">
 
-        <?php if(supports_post_type($this->user, 'reply')): ?>
-
-        <div id="reply">
-          <div class="reply-section hidden">
-            <div class="form-group has-feedback">
-              <label for="note_in_reply_to">Reply To (a URL you are replying to)</label>
-              <input type="text" id="note_in_reply_to" value="<?= $this->in_reply_to ?>" class="form-control">
-              <span class="loading hidden glyphicon glyphicon-refresh glyphicon-spin form-control-feedback"></span>
-            </div>
-            <div class="reply-context hidden">
-              <div class="reply-author">
-                <img src="" width="48" class="author-img">
-              </div>
-              <div class="reply-content">
-                <img src="" class="post-img hidden">
-                <div class="author"><div class="syndications"></div><span class="name"></span> <span class="url"></span></div>
-                <h4 class="post-name hidden"></h4>
-                <span class="content"></span>
-              </div>
-            </div>
-          </div>
-          <a href="" id="expand-reply" class="btn btn-xs btn-info">Reply</a>
-        </div>
-
-        <div class="form-group hidden" id="form_rsvp">
-          <label for="note_rsvp">RSVP</label>
-          <select id="note_rsvp" class="form-control">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-            <option value="maybe">Maybe</option>
-            <option value="interested">Interested</option>
-            <option value=""></option>
-          </select>
-        </div>
-
-        <?php endif ?>
-
         <div class="form-group hidden" id="note-name">
           <label for="note_name">Issue Title</label>
           <input type="text" id="note_name" value="" class="form-control" placeholder="">
