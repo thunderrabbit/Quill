@@ -3,15 +3,15 @@
 
       <form role="form" style="margin-top: 20px;" id="note_form">
 
-        <div class="form-group hidden" id="note-name">
-          <label for="note_name">Issue Title</label>
+        <div class="form-group" id="note-name">
+          <label for="note_name">Title</label>
           <input type="text" id="note_name" value="" class="form-control" placeholder="">
         </div>
 
         <div class="form-group">
           <div id="note_content_remaining" class="pcheck206"><img src="/images/twitter.ico"> <span>280</span></div>
           <label for="note_content">Content</label>
-          <textarea id="note_content" value="" class="form-control" style="height: 4em;"></textarea>
+          <textarea id="note_content" value="" class="form-control" style="height: 24em;"></textarea>
         </div>
 
         <div class="form-group hidden" id="content-type-selection">
