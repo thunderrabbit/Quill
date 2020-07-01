@@ -4,8 +4,8 @@
       <form role="form" style="margin-top: 20px;" id="note_form">
 
         <div class="form-group" id="note-name">
-          <label for="note_name">Title</label>
-          <input type="text" id="note_name" value="" class="form-control" placeholder="">
+          <label for="entry_title">Title</label>
+          <input type="text" id="entry_title" name="title" value="" class="form-control" placeholder="Title">
         </div>
 
         <div class="form-group">
@@ -689,10 +689,6 @@ $(function(){
     var doMultipart = false;
     var hasAltText = false;
 
-    if(v=$("#note_name").val()) {
-      formData.append("name", v);
-      entry['name'] = [v];
-    }
     if(v=$("#note_content").val()) {
       formData.append("content", v);
       entry['content'] = [v];
