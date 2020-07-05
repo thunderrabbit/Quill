@@ -615,11 +615,6 @@ $(function(){
         } else {
           $(".reply-context img.post-img").addClass('hidden');
         }
-        if(data.entry.type == "event") {
-          $("#form_rsvp").removeClass("hidden");
-        } else {
-          $("#form_rsvp").addClass("hidden");
-        }
         if(data.syndications) {
           $(".reply-context .syndications").html('');
           for(var i in data.syndications) {
@@ -693,10 +688,6 @@ $(function(){
     if(v=$("#note_slug").val()) {
       formData.append("<?= $this->user->micropub_slug_field ?>", v);
       entry["<?= $this->user->micropub_slug_field ?>"] = v;
-    }
-    if(!$("#form_rsvp").hasClass("hidden") && $("#note_rsvp").val()) {
-      formData.append("rsvp", $("#note_rsvp").val());
-      entry["rsvp"] = $("#note_rsvp").val();
     }
 
     if($("#visibility").val()) {
