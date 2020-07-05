@@ -670,9 +670,9 @@ $(function(){
       formData.append("content", v);
       entry['content'] = [v];
     }
-    if(v=$("#note_in_reply_to").val()) {
-      formData.append("in-reply-to", v);
-      entry['in-reply-to'] = [v];
+    if(v=$("#entry_title").val()) {
+      formData.append("entry_title", v);
+      entry['entry_title'] = [v];
     }
     if(v=$("#note_location").val()) {
       formData.append("location", v);
