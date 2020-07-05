@@ -661,6 +661,9 @@ $(function(){
     var doMultipart = false;
     var hasAltText = false;
 
+    formData.append('journal', 'journal');    // send 'journal' via post to allow my Micropub to know what these are https://github.com/thunderrabbit/micropub/blob/8b2236f064f31ff5cab27b4d92b4a26bef561eff/inc/content.php#L119
+    entry['journal'] = 'journal in JS entry array in Quill journal.php';             // I don't know what entry array is good for.
+
     if(v=$("#note_content").val()) {
       formData.append("content", v);
       entry['content'] = [v];
