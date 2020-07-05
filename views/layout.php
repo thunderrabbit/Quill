@@ -76,6 +76,9 @@
       <ul class="nav navbar-nav">
 
         <?php if(session('me') && isset($this->user)) { ?>
+          <?php if(supports_post_type($this->user, 'journal')): ?>
+            <li><a href="/journal">𝓡 journal</a></li>
+          <?php endif; ?>
           <?php if(supports_post_type($this->user, 'article')): ?>
             <li><a href="/editor">📄 Editor</a></li>
           <?php endif; ?>

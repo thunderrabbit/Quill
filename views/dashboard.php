@@ -4,6 +4,9 @@
   <div style="  margin-top: 4em; margin-bottom: 4em;">
     <ul class="post-type-icons">
       <?php if(supports_post_type($this->user, 'article')): ?>
+        <li><a href="/journal">𝓡</a></li>
+      <?php endif; ?>
+      <?php if(supports_post_type($this->user, 'article')): ?>
         <li><a href="/editor">📄</a></li>
       <?php endif; ?>
       <?php if(supports_post_type($this->user, 'note')): ?>
