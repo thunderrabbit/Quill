@@ -24,6 +24,14 @@
           <input type="text" id="note_slug" value="" class="form-control">
         </div>
 
+        <div class="form-group" id="form_type">
+          <label for="journal_type">Type</label> (affects class on p tags)
+          <select type="select" id="journal_type"  name="journal_type" class="form-control">
+            <option value="journal">journal</option>
+            <option value="dream">dream</option>
+          </select>
+        </div>
+
         <?php if(supports_post_type($this->user, 'photo')): ?>
 
         <div class="form-group hidden" id="photo-previews">
@@ -675,6 +683,11 @@ $(function(){
     if(v=$("#note_location").val()) {
       formData.append("location", v);
       entry['location'] = [v];
+    }
+    // allow micropub content.php to call journal_dream or journl_journal via function posttype_source_function
+    if(v=$("#journal_type").val()) {
+      formData.append(v, "https://robnugen.com");   // must be a valid URL, including http(s) so parse_url can parse it
+      formData.append("posttype", v);
     }
     if(category.length > 0) {
       for(var i in category) {
