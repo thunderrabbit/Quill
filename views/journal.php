@@ -1,5 +1,5 @@
   <div class="narrow">
-    <?= partial('partials/header') ?>
+    <?php echo partial('partials/header') ?>
 
       <form role="form" style="margin-top: 20px;" id="note_form">
 
