@@ -5,13 +5,20 @@
 
         <div class="form-group" id="note-name">
           <label for="entry_title">Title</label>
-          <input type="text" id="entry_title" name="title" value="" class="form-control" placeholder="Title">
+          <input type="text" id="entry_title" name="title" value="<?php if($_GET['debug']){echo "monkey " . date("Y-m-d h i s");} ?>" class="form-control" placeholder="Title">
         </div>
 
         <div class="form-group">
           <div id="note_content_remaining" class="pcheck206"><img src="/images/twitter.ico"> <span>280</span></div>
           <label for="note_content">Content</label>
-          <textarea id="note_content" value="" class="form-control" style="height: 24em;"></textarea>
+          <textarea id="note_content" value="" class="form-control" style="height: 24em;"><?php if($_GET['debug']): ?>dfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfd
+gss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sd
+
+fgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdg
+s dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg
+
+fgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdf
+df sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfd<?php endif; // ($_GET['debug']): ?></textarea>
         </div>
 
         <div class="form-group" id="form_tags">
