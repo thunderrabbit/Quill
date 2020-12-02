@@ -100,6 +100,8 @@ df sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf s
         </div>
 
         <button class="btn btn-success" id="btn_post">Post</button>
+        <label for="build_site_bool">Build Site</label>
+        <input type="checkbox" id="build_site_bool" value="true">
       </form>
 
       <div class="alert alert-success hidden" id="test_success"><strong>Success! </strong><a href="" id="post_href">View your post</a></div>
@@ -690,6 +692,10 @@ $(function(){
     if(v=$("#note_location").val()) {
       formData.append("location", v);
       entry['location'] = [v];
+    }
+    if(v=$("#build_site_bool").prop('checked')) {
+      formData.append("build_site", true);
+      // entry['build_site'] = [true];     <--- I do not know what this line does, so not copying despite it's in all the other blocks above.
     }
     // allow micropub content.php to call journal_dream or journl_journal via function posttype_source_function
     if(v=$("#journal_type").val()) {
