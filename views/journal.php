@@ -9,7 +9,6 @@
         </div>
 
         <div class="form-group">
-          <div id="note_content_remaining" class="pcheck206"><img src="/images/twitter.ico"> <span>280</span></div>
           <label for="note_content">Content</label>
           <textarea id="note_content" value="" class="form-control" style="height: 24em;"><?php if($_GET['debug']): ?>dfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfd
 gss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sd
@@ -185,12 +184,6 @@ df sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf s
 
 #reply {
   margin-bottom: 1em;
-}
-
-#note_content_remaining {
-  float: right;
-  font-size: 0.8em;
-  font-weight: bold;
 }
 
 #modal_photo_preview {
@@ -550,24 +543,6 @@ $(function(){
 
   // Preview the photo when one is chosen
   $("#photo_preview_container").addClass("hidden");
-
-  $("#note_content").on('change keyup', function(e){
-    var text = $("#note_content").val();
-    var tweet_length = tw_text_proxy(text).length;
-    var tweet_check = tw_length_check(text, 280, "<?= $this->user->twitter_username ?>");
-    var remaining = 280 - tweet_length;
-    $("#note_content_remaining span").html(remaining);
-    $("#note_content_remaining").removeClass("pcheck200 pcheck206 pcheck207 pcheck208 pcheck413");
-    $("#note_content_remaining").addClass("pcheck"+tweet_check);
-
-    // If the user didn't enter any categories, add them from the post
-    // if(!userHasSetCategory) {
-    //   var tags = $("#note_content").val().match(/#[a-z][a-z0-9]+/ig);
-    //   if(tags) {
-    //     $("#note_category").val(tags.map(function(tag){ return tag.replace('#',''); }).join(", "));
-    //   }
-    // }
-  });
 
   $("#note_in_reply_to").on('change', function(){
     var reply_to = $("#note_in_reply_to").val();
