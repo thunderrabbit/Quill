@@ -267,52 +267,6 @@ df sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf s
 </style>
 
 <script>
-function saveNoteState() {
-  var state = {
-    content: $("#note_content").val(),
-    inReplyTo: $("#note_in_reply_to").val(),
-    category: $("#note_category").val(),
-    slug: $("#note_slug").val(),
-    photos: photos
-  };
-  state.syndications = [];
-  $("#syndication-container button.btn-info").each(function(i,btn){
-    state.syndications[$(btn).data('syndicate-to')] = 'selected';
-  });
-  // console.log("saving",state);
-  localforage.setItem('current-note', state);
-}
-
-function restoreNoteState() {
-  localforage.getItem('current-note', function(err,note){
-    if(note) {
-      $("#note_content").val(note.content);
-      $("#note_in_reply_to").val(note.inReplyTo);
-      $("#note_category").val(note.category);
-      $("#note_slug").val(note.slug);
-      if(note.photos) {
-        photos = note.photos;
-        refreshPhotoPreviews();
-      }
-      if(note.inReplyTo) {
-        expandReplySection();
-      }
-      $("#syndication-container button").each(function(i,btn){
-        if($(btn).data('syndicate-to') in note.syndications) {
-          $(btn).addClass('btn-info');
-        }
-      });
-      $("#note_content").change();
-      if($("#note_content").val().match(/`/)) {
-        switchToMarkdown();
-      }
-      activateTokenField();
-    } else {
-      activateTokenField();
-    }
-  });
-}
-
 function expandReplySection() {
   $("#expand-reply").click();
   $("#note_in_reply_to").change();
