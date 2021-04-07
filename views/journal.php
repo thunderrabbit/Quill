@@ -423,42 +423,6 @@ function refreshPhotoPreviews() {
   });
 }
 
-/*
-  $("#note_photo").on("change", function(e){
-    // If the user has a media endpoint, upload the photo to it right now
-    if(hasMediaEndpoint) {
-      // TODO: add loading state indicator here
-      console.log("Uploading file to media endpoint...");
-      var formData = new FormData();
-      formData.append("null","null");
-      formData.append("photo", e.target.files[0]);
-      var request = new XMLHttpRequest();
-      request.open("POST", "/micropub/media");
-      request.onreadystatechange = function() {
-        if(request.readyState == XMLHttpRequest.DONE) {
-          try {
-            var response = JSON.parse(request.responseText);
-            if(response.location) {
-              // Replace the file upload form with the URL
-              replacePhotoWithPhotoURL(response.location);
-              saveNoteState();
-            } else {
-              console.log("Endpoint did not return a location header", response);
-            }
-          } catch(e) {
-            console.log(e);
-          }
-        }
-      }
-      request.send(formData);
-    } else {
-      $("#photo_preview").attr("src", URL.createObjectURL(e.target.files[0]) );
-      $("#photo_preview_container").removeClass("hidden");
-    }
-  });
-*/
-
-
 $(function(){
 
   var userHasSetCategory = false;
