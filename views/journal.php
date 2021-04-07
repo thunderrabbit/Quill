@@ -463,24 +463,6 @@ $(function(){
 
   var userHasSetCategory = false;
 
-  $("#note_content, #note_category, #note_in_reply_to, #note_slug").on('keyup change', function(e){
-    saveNoteState();
-  });
-
-  $("#note_content").on('keyup', function(e){
-    var scrollHeight = document.getElementById("note_content").scrollHeight;
-    var currentHeight = parseInt($("#note_content").css("height"));
-    if(Math.abs(scrollHeight - currentHeight) > 20) {
-      $("#note_content").css("height", (scrollHeight+30)+"px");
-    }
-    // If you type a backtick in the content, and are replying to a github issue, switch to markdown
-    if(e.key == '`') {
-      if($("#note_in_reply_to").val().match(/github\.com/)) {
-        switchToMarkdown();
-      }
-    }
-  });
-
   $("#visibility").on('change', function(e){
     if($(this).val() == 'private') {
       $("#syndication-targets").addClass('hidden');
@@ -522,24 +504,6 @@ $(function(){
       if(data.canonical_reply_url != reply_to) {
         $("#note_in_reply_to").val(data.canonical_reply_url);
       }
-      // var category = csv_to_array($("#note_category").val());
-      // for(var i in data.entry.category) {
-      //   if($.inArray(data.entry.category[i], category) == -1) {
-      //     category.push(data.entry.category[i]);
-      //   }
-      // }
-      // $("#note_category").val(category.join(", "));
-
-      /*
-      // stop auto-populating usernames in replies, since Twitter no longer requires it
-      if($("#note_content").val() == "" && data.mentions) {
-        var mentions = '';
-        for(var i in data.mentions) {
-          mentions += '@'+data.mentions[i]+' ';
-        }
-        $("#note_content").val(mentions);
-      }
-      */
 
       if(data.entry) {
         $(".reply-context .content").text(data.entry.content.text);
