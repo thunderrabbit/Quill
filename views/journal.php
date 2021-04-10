@@ -542,7 +542,7 @@ $(function(){
       formData.append("content", v);
       entry['content'] = [v];
     }
-    if(v=$("#entry_title").val()) {
+    if(v=$("#entry_title").val().trim()) {   // .trim(): trims trailing hyphens from URL
       formData.append("entry_title", v);
       entry['entry_title'] = [v];
     }
