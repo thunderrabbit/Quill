@@ -33,6 +33,7 @@ df sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf s
         <div class="form-group" id="form_type">
           <label for="journal_type">Type</label> (affects class on p tags)
           <select type="select" id="journal_type"  name="journal_type" class="form-control">
+            <option value="quest">quest</option>
             <option value="journal">journal</option>
             <option value="dream">dream</option>
           </select>
