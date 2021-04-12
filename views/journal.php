@@ -10,14 +10,10 @@
 
         <div class="form-group">
           <label for="note_content">Content</label>
-          <textarea id="note_content" value="" class="form-control" style="height: 24em;"><?php if($_GET['debug']): ?>dfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfd
-gss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sd
-
-fgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdg
-s dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg
-
-fgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdf
-df sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfdgss dfg sdfgdf sgfd<?php endif; // ($_GET['debug']): ?></textarea>
+          <textarea id="note_content" value="" class="form-control" style="height: 24em;">
+<?php if($_GET['debug']): ?>dfgdf sgfd<?php endif; // ($_GET['debug']): ?>
+<?php if($_GET['text']): echo urldecode($_GET['text']); endif; ?>
+          </textarea>
         </div>
 
         <div class="form-group" id="form_tags">
