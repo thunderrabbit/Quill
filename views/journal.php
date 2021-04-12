@@ -12,7 +12,7 @@
           <label for="note_content">Content</label>
           <textarea id="note_content" value="" class="form-control" style="height: 24em;">
 <?php if($_GET['debug']): ?>dfgdf sgfd<?php endif; // ($_GET['debug']): ?>
-<?php if($_GET['text']): echo urldecode($_GET['text']); endif; ?>
+<?php if($_GET['text']): echo htmlspecialchars(urldecode($_GET['text'])); endif; ?>
           </textarea>
         </div>
 
