@@ -21,6 +21,9 @@
       <?php if(supports_post_type($this->user, 'like')): ?>
         <li><a href="/favorite">👍</a></li>
       <?php endif; ?>
+      <?php if(supports_post_type($this->user, 'weight')): ?>
+        <li><a href="/weight">⚖️</a></li>
+      <?php endif; ?>
       <?php if(supports_post_type($this->user, 'repost')): ?>
         <li><a href="/repost">♺</a></li>
       <?php endif; ?>
@@ -30,7 +33,6 @@
       <?php if(supports_post_type($this->user, 'review')): ?>
         <li><a href="/review">⭐️</a></li>
       <?php endif; ?>
-      <li><a href="/email">✉️</a></li>
       <li><a href="/settings">⚙</a></li>
     </ul>
     <div style="clear:both;"></div>

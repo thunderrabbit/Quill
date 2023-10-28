@@ -120,8 +120,8 @@ function micropub_media_post_for_user(&$user, $file) {
   $r = micropub_post($user->micropub_media_endpoint, [], $user->micropub_access_token, $file, true, 'file');
 
   // Check the response and look for a "Location" header containing the URL
-  if($r['response'] && preg_match('/Location: (.+)/', $r['response'], $match)) {
-    $r['location'] = trim($match[1]);
+  if($r['headers'] && $r['headers']['Location']) {
+    $r['location'] = $r['headers']['Location'];
   } else {
     $r['location'] = false;
   }
@@ -370,7 +370,12 @@ function get_micropub_source(&$user, $url, $properties) {
 }
 
 function static_map($latitude, $longitude, $height=180, $width=700, $zoom=14) {
-  return 'https://atlas.p3k.io/map/img?marker[]=lat:' . $latitude . ';lng:' . $longitude . ';icon:small-blue-cutout&basemap=gray&width=' . $width . '&height=' . $height . '&zoom=' . $zoom;
+  $params = [
+    'h' => $height,
+    'w' => $width,
+    'z' => $zoom,
+  ];
+  return '/map-img?lat='.$latitude.'&lng='.$longitude.'&'.http_build_query($params);
 }
 
 function relative_time($date) {
